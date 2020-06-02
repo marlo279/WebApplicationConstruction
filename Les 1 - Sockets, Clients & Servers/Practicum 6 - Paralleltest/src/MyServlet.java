@@ -20,8 +20,7 @@ public class MyServlet extends Thread {
 
   public void run() {
     try {
-      InputStream is = socket.getInputStream();
-      Scanner scan = new Scanner(is);
+
   
       BufferedWriter out = new BufferedWriter(
           new OutputStreamWriter(
@@ -31,9 +30,11 @@ public class MyServlet extends Thread {
       );
   
       out.write(OUTPUT_HEADERS + OUTPUT.length() + OUTPUT_END_OF_HEADERS + OUTPUT);
+      
+      Thread.sleep(10000);
+      
       out.flush();
       out.close();  
-      scan.close();
 
     } catch(Exception e) {
       System.out.print(e);
