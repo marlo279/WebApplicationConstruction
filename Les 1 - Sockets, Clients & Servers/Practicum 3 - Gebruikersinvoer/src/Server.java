@@ -20,7 +20,6 @@ class Server {
         InputStream is = s.getInputStream() ;
         Scanner sr = new Scanner(is);
 
-        int c = is.read();
         while (sr.hasNextLine()) {
             String bericht = sr.nextLine();
         	System.out.println("Bericht van Client: " + bericht);

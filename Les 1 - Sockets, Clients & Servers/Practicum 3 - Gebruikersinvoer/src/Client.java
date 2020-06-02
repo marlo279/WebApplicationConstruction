@@ -10,13 +10,13 @@ class Client {
 
 		while(true){
 			System.out.println("Stuur bericht: ");
-			String message = keyboard.nextLine();
-			System.out.println("Ingevoerd: " + message);
+			String bericht = keyboard.nextLine();
+			System.out.println("Ingevoerd: " + bericht);
 			
-			out.write(message + "\n");
+			out.write(bericht + "\n");
 			out.flush();
 			
-			if (message.equals("stop")) {
+			if (bericht.equals("stop")) {
 				break;
 			}
 		}
