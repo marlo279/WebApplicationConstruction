@@ -1,4 +1,4 @@
-package nl.wac.hu.v1wac.firstapp;
+package nl.hu.v1wac.firstapp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
