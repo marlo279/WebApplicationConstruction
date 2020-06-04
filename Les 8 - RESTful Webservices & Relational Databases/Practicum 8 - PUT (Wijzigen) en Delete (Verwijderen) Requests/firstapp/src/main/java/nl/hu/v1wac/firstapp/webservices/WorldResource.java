@@ -20,8 +20,8 @@ public class WorldResource {
 @GET
 @Produces("application/json")
 public String getCountries(){
+	System.out.println("Alle landen worden opgevraagd vanuit het Database");
 	for (Country c: service.getAllCountries()){
-		
 		job.add("name", c.getName());
 		job.add("surface", c.getSurface());
 		job.add("region", c.getRegion());

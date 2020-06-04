@@ -5,9 +5,6 @@ function loadCountries() {
         .then(response => response.json())
         .then((myJson) => {
             let table = document.querySelector('tbody');
-
-            var naam = myJson[2].name;
-            console.log(naam);
            
             var i = 0;
             for (i; i < myJson.length; i++) {
@@ -43,6 +40,6 @@ function loadCountries() {
 
 
 
-window.onload = function() {
-    loadCountries();
-}
+// window.onload = function() {
+//     loadCountries();
+// }

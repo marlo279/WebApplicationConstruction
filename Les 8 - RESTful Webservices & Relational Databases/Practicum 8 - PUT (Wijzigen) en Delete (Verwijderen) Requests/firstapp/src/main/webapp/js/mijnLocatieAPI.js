@@ -25,4 +25,4 @@ document.querySelector('#myLocation').addEventListener('click', (event) => {
 
 
 
-initPage();
+// initPage();

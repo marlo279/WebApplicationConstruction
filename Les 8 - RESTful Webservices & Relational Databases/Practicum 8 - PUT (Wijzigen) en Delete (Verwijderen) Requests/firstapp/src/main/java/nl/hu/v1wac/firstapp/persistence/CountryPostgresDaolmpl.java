@@ -43,6 +43,8 @@ public class CountryPostgresDaolmpl extends PostgresBaseDao implements CountryDa
 				
 				Country c = new Country(code, iso3, nm, cap, ct, reg, sur, pop, gov, lat, lng);
 				results.add(c);
+				
+				System.out.println(results.size());
 			}
 		} catch (SQLException sqle) { sqle.printStackTrace(); }
 		
