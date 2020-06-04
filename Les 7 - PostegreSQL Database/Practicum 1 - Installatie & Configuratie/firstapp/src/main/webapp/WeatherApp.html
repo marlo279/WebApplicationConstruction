@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    <div id="frame">
+
+        <div id="myLocation">
+            <h3>Mijn locatie</h3>
+            <label id="landcode">LandCode: </label> <br>
+            <label id="land">Land: </label> <br>
+            <label id="regio">Regio: </label> <br>
+            <label id="stad">Stad: </label> <br>
+            <label id="postcode">Postcode: </label> <br>
+            <label id="latitude">Latitude: </label> <br>
+            <label id="longitude">Longitude: </label> <br>
+            <label id="ip">IP: </label> <br>
+
+        </div>
+
+        <div id="weatherInfo">
+            <h3>Het weer in <span id="weatherInfo_city"> </span></h3>
+            <label id="weatherInfo_temperatuur">Temperatuur: </label> <br>
+            <label id="weatherInfo_luchtvochtigheid">Luchtvochtigheid: </label> <br>
+            <label id="weatherInfo_windsnelheid">Windsnelheid: </label> <br>
+            <label id="weatherInfo_windrichting">Windrichting: </label> <br>
+            <label id="weatherInfo_zonsopgang">Zonsopgang: </label> <br>
+            <label id="weatherInfo_zondsondergang">Zonsondergang: </label>
+        </div>
+
+        <div id="countryList">
+
+            <h3>Beschikbare vakantiebestemmingen</h3>
+            <table id = "output" class="customers">
+                
+                <tr>
+                    <th>land</th> 
+                    <th>hoofdstad</th> 
+                    <th>regio</th> 
+                    <th>oppervlakte</th> 
+                    <th>inwoners</th> 
+                </tr>
+                <tbody></tbody>
+             
+            </table>
+            
+            <!-- <table id="output">
+            </table> -->
+
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="js/mijnLocatieAPI.js"></script>
+    <script type="text/javascript" src="js/weerAPI.js"></script>
+    <script type="text/javascript" src="js/worldResourceAPI.js"></script>
+
+    
+</body>
+</html>
