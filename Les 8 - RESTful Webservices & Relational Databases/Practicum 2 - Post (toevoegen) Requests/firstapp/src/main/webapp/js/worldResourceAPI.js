@@ -37,14 +37,14 @@ function loadCountries() {
 			}  
 
             
-            // var landen = document.getElementsByClassName('country_list');
+            var landen = document.getElementsByClassName('country_list');
             
-            // for (i = 0; i < landen.length; i++) {
-            //     landen[i].addEventListener('click', (event) => {
-            //         let land = event.target.closest(".country_list");
-            //         showWeather(land.getAttribute("data-lang"), land.getAttribute("data-long"), land.getAttribute("data-land"));
-            //     }, false);
-//            }
+            for (i = 0; i < landen.length; i++) {
+                landen[i].addEventListener('click', (event) => {
+                    let land = event.target.closest(".country_list");
+                    showWeather(land.getAttribute("data-lang"), land.getAttribute("data-long"), land.getAttribute("data-land"));
+                }, false);
+           }
     });
 
     
