@@ -12,7 +12,6 @@ function initPage() {
         document.querySelector('#ip').append(myJson.ip);
 
         showWeather(myJson.latitude, myJson.longitude, myJson.city);
-        loadCountries();
     });
 }
 
@@ -25,4 +24,4 @@ document.querySelector('#myLocation').addEventListener('click', (event) => {
 
 
 
-// initPage();
+initPage();

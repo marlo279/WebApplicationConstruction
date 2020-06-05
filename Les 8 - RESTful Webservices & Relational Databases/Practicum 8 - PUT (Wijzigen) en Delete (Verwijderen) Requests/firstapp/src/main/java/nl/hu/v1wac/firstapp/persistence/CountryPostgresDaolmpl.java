@@ -44,9 +44,12 @@ public class CountryPostgresDaolmpl extends PostgresBaseDao implements CountryDa
 				Country c = new Country(code, iso3, nm, cap, ct, reg, sur, pop, gov, lat, lng);
 				results.add(c);
 				
-				System.out.println(results.size());
 			}
-		} catch (SQLException sqle) { sqle.printStackTrace(); }
+		} catch (SQLException sqle) { 
+			sqle.printStackTrace(); 
+			}
+		
+		System.out.println("Er zijn " + results.size() + " recors geladen uit het database!");
 		
 		return results;
 	}
@@ -101,7 +104,9 @@ public class CountryPostgresDaolmpl extends PostgresBaseDao implements CountryDa
 					+ "where code = '" + country.getCode() + "'";
 			System.out.println(q);
 			PreparedStatement pstmt = con.prepareStatement(q);
-			ResultSet dbResultSet = pstmt.executeQuery();		
+			int dbResultSet = pstmt.executeUpdate();	
+			System.out.println("Land met country code: " + country.getCode() + " is in het database aangepast!");
+
 		} catch (Exception exc) {
 			exc.printStackTrace();
 		}
@@ -112,7 +117,8 @@ public class CountryPostgresDaolmpl extends PostgresBaseDao implements CountryDa
 	public boolean delete(Country country) {
 		try (Connection con = super.getConnection()) {
 			PreparedStatement pstmt = con.prepareStatement("delete from country where code = '" + country.getCode() + "'");
-			ResultSet dbResultSet = pstmt.executeQuery();
+			int dbResultSet = pstmt.executeUpdate();
+			System.out.println("Land met country code: " + country.getCode() + " is verwijderd uit het database!");
 			return true;
 		} catch (Exception exc) {
 			exc.printStackTrace();

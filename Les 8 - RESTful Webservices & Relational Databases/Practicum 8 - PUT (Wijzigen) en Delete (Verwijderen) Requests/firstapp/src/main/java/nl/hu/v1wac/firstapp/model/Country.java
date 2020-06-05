@@ -13,6 +13,7 @@ public class Country {
 	private double latitude;
 	private double longitude;
 	
+	public Country() {}
 	
 	public Country(String iso2cd, String iso3cd, String nm, String cap, String ct, String reg, double sur, int pop, String gov, double lat, double lng) {
 		iso2Code = iso2cd;
@@ -70,5 +71,25 @@ public class Country {
 	
 	public double getLongitude() {
 		return longitude;
+	}
+	
+	public void setCode(String code) {
+		this.iso2Code = code;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setCapital(String capital) {
+		this.capital= capital;
+	}
+	
+	public void setSurface(int surface) {
+		this.surface = surface;
+	}
+	
+	public void setPopulation(int population) {
+		this.population = population;
 	}
 }

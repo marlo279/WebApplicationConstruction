@@ -29,6 +29,7 @@ public String getCountries(){
 		job.add("capital", c.getCapital());
 		job.add("latitude", c.getLatitude());
 		job.add("longitude", c.getLongitude());
+		job.add("code", c.getCode());
 		jab.add(job);
 	}
 	JsonArray array = jab.build();
