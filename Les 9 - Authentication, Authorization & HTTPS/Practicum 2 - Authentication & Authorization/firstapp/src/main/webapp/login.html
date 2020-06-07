@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/knoppen.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="grid-container">
+            <div class="Inloggen">
+                    <p>Inloggen</p>
+            </div>
+            <div class="Form">
+                <form id="loginform">
+                
+                    <label>E-mail:</label>
+                    <input type="text" name="email">
+                
+                    <label>Wachtwoord:</label>
+                    <input type="password" name="wachtwoord">
+                
+                    <input type="button" id="login" value="login">
+                    
+               </form>
+                 
+            </div>
+    </div>
+
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script>
+
+        const parseJwt = (token) => {
+            try {
+            return JSON.parse(atob(token.split('.')[1]));
+            } catch (e) {
+            return null;
+            }
+        };
+
+        
+
+
+        $("#login").click(function (event) {
+            var data = $("#loginform").serialize();
+                                  
+            $.post("/firstapp/restservices/authentication", data, function (response) {
+                window.sessionStorage.setItem("sessionToken", response);
+                
+                const tokenRole = parseJwt(window.sessionStorage.getItem('sessionToken')).role;
+                
+                if (tokenRole === 'admin') {
+                    window.location.href = "WeatherApp_CRUD.html";
+                } 
+
+                if (tokenRole === 'user') {
+                    window.location.href = "WeatherApp_CRUD.html";
+                }
+     
+
+                console.log(response);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(errorThrown);
+            });
+        });
+
+        let tokenRole = parseJwt(window.sessionStorage.getItem('sessionToken')).role;
+        console.log('Welcome ' + tokenRole);
+
+    </script>
+                
+</body>
+</html>

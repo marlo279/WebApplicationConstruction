@@ -1,0 +1,5 @@
+Vergelijkbaar met het vorige practicum alleen 
+de response word nu doormiddel van een servlet gegeven.
+Dia gestart word doormiddel van de extended thread.
+
+De thread blijft ook draaien, en stop dus niet na een repsonse.
